@@ -51,7 +51,6 @@ end
 
 
 delete '/session' do
-  "delete the session"
   session[:user_id] = nil
   redirect '/login'
 end
@@ -59,7 +58,7 @@ end
 
 
 get '/properties' do
-  @properties = Property.all
+  @properties = Property.where(user_id: current_user)
   erb :properties
 end
 
