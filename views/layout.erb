@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HomeChekr</title>
+  <link rel='stylesheet' href='/stylesheets/reset.css'>
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+</head>
+<body>
+  
+  <nav>
+    <div class="nav-btn">
+      <span>Menu</span>
+    </div>
+
+    <a href="/"><h1>HomeCheckr</h1></a>
+
+    <div class="nav-btn">
+      <span>Search</span>
+    </div>
+  </nav>
+
+
+
+  <% if logged_in? %>
+    <form action="/session" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>logout</button>
+    </form>
+    logged in as: <%= current_user.email %>
+  <% end %>
+  
+  <br>
+  <a href="/properties">View all saved properties</a>
+
+  <%= yield %>
+
+</body>
+</html>

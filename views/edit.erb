@@ -1,0 +1,14 @@
+<form action="/properties/<%= @property.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="">Address</label>
+  <input type="text" name="address" value="<%= @property.address %>">
+
+  <label for="">Image url</label>
+  <input type="text" name="main_img" value="<%= @property.main_img %>">
+
+  <label for="">Comment</label>
+  <input type="text" name="notes_general" value="<%= @property.notes_general %>">
+
+  <button>Update</button>
+</form>

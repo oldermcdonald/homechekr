@@ -1,0 +1,20 @@
+<h1><%= @property.address %></h1>
+<img src="<%= @property.main_img%>" alt="">
+<p><%= @property.notes_general %>
+<p><a href="/properties/<%= @property.id %>/edit">Edit Property</a></p>
+
+<form action="/properties/<%= @property.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Delete Property</button>
+</form>
+
+<form action="/comments" method="post">
+  <input type="hidden" name="property_id" value="<%= @property.id %>">
+  <textarea name="content"></textarea>
+  <button>Post</button>
+</form>
+
+<h3>Friend Comments:</h3>
+<% @comments.each do |comment| %>
+  <p><%= comment.content %></p>
+<% end %>

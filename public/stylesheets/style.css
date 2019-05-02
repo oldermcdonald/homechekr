@@ -1,0 +1,101 @@
+body {
+  box-sizing: border-box;
+  background-color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  font-size: 1.5em;
+  background-color: #e4002a;
+  color: white;
+}
+
+nav h1 {
+  font-family: 'Cabin', sans-serif;
+  font-size: 2.5em;
+}
+
+.nav-btn {
+  border: 1px solid black;
+}
+
+
+.property-container {
+  display: flex;
+  border: 1px solid black;
+  padding: 0.5em 0;
+}
+
+.property-container .main_img {
+  width: 300px;
+  display: block;
+  padding: 0 0.5em;
+}
+
+.property-summary{
+  width: 100%;
+}
+
+.property-summary h3 {
+  font-size: 1.5em;
+}
+
+.feature-container {
+  /* border: 1px solid black; */
+  padding-top: 1em;
+  font-size: 0.8em;
+}
+
+.feature-icon {
+  max-width: 1.5em;
+  padding-left: 2em;
+}
+
+.feature-icon:first-child {
+  padding-left: 0;
+}
+
+
+
+
+.login-container {
+  border: 1px solid black;
+  height: 20vh;
+  width: 30vw;
+  margin: 5em 5em;
+  padding: 2em;
+}
+
+.login-options {
+  display: flex;
+  height: 1.5em;
+  justify-content: space-between;
+  border: 1px solid black;
+  background-color: grey;
+  font-size: 1.5em;
+}
+
+.login-options p {
+  border: 1px solid black;
+}
+
+.login-details input {
+  display: block;
+  border: 1px solid black;
+}
+
+.login-details button {
+  background-color: grey;
+}

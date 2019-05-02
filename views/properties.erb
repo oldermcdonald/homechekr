@@ -1,0 +1,25 @@
+
+<% @properties.each do |property| %>
+  <div class="property-container">
+
+    <a href="properties/<%= property.id  %>">
+      <img src="<%= property.main_img %>" class="main_img" alt="<%= property.address %>">
+    </a>
+
+    <div class="property-summary">
+      <h3><%= property.address %></h3>
+
+      <div class="feature-container">
+        <img src="/images/icon-bed.png" class="feature-icon">
+        <span><%= property.bed_count %></span>
+        
+        <img src="/images/icon-bath.png" class="feature-icon">
+        <span><%= property.bath_count %></span>
+
+        <img src="/images/icon-car.png" class="feature-icon">
+        <span><%= property.car_space_count %></span>
+      </div>
+    </div>
+
+  </div>
+<% end %>
