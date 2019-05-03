@@ -1,8 +1,8 @@
 <h1><%= @property.address %></h1>
-<img src="<%= @property.main_img%>" alt="">
+<img src="<%= @property.main_img%>" class="main-img" alt="">
 <p><%= @property.notes_general %>
 
-<p><a href="/properties/<%= @property.id %>/edit">Edit Property</a></p>
+<p><a href="/properties/<%= @property.id %>/edit" class="btn-simple">Edit Property</a></p>
 
 <form action="/properties/<%= @property.id %>" method="post">
   <input type="hidden" name="_method" value="delete">

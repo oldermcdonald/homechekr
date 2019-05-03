@@ -1,25 +1,41 @@
-<form action="/properties" method="post">
 
-  <label for="">Address</label>
-  <input type="text" name="address">
+<div class = "new-form">
+  <form action="/properties" method="post">
 
-  <label for="">Cover Image</label>
-  <input type="text" name="main_img">
+    <label for="">Address</label>
+    <input type="text" name="address">
 
-  <label for="">Property Type</label>
-  <input type="text" name="property_type">
+    <label for="">Cover Image Upload</label>
+    <input type="text" name="main_img">
 
-  <label for="">Bedrooms</label>
-  <input type="text" name="bed_count">
+    <label for="">Property Type</label>
+    <input type="text" name="property_type">
 
-  <label for="">Bathrooms</label>
-  <input type="text" name="bath_count">
-  
-  <label for="">Car Space</label>
-  <input type="text" name="car_space_count">
+    <div class = "radio-container">
+      <input type="radio" name="property_type" value="House" id="House">
+      <label for="House">House</label>
+      <input type="radio" name="property_type" value="Apartment" id="Apartment">
+      <label for="Apartment">Apartment</label>
+      <input type="radio" name="property_type" value="Unit" id="Unit">
+      <label for="Unit">Unit</label>
+      <input type="radio" name="property_type" value="Townhouse" id="Townhouse">
+      <label for="Townhouse">Townhouse</label>
+      <input type="radio" name="property_type" value="Land" id="Land">
+      <label for="Land">Land</label>
+    </div>
 
-  <label for="">General Notes</label>
-  <input type="text" name="notes_general">
+    <label for="">Bedrooms</label>
+    <input type="text" name="bed_count">
 
-  <button>Add</button>
-</form>
+    <label for="">Bathrooms</label>
+    <input type="text" name="bath_count">
+    
+    <label for="">Car Space</label>
+    <input type="text" name="car_space_count">
+
+    <label for="">General Notes</label>
+    <textarea name="notes_general" id="notes_general" cols="30" rows="5"></textarea>
+
+    <button>Add</button>
+  </form>
+</div>

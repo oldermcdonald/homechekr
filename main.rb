@@ -1,9 +1,8 @@
 # SEI Project 2 - David McDonald
 # Homechekr App
 
-
 require 'sinatra'
-require 'sinatra/reloader'
+# require 'sinatra/reloader'
 require 'pry'
 require_relative 'db_config'
 
@@ -43,7 +42,7 @@ post '/session' do
   user = User.find_by(email: params[:email])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
-    redirect '/'
+    redirect '/properties'
   else
     erb :login
   end
