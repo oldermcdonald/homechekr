@@ -39,7 +39,7 @@ end
 
 
 post '/session' do
-  user = User.find_by(email: params[:email])
+  user = User.find_by(email: params[:email].downcase)
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
     redirect '/properties'
@@ -70,7 +70,7 @@ end
 
 post '/properties' do
   property = Property.new
-
+  
   property.address = params[:address]
   property.main_img = params[:main_img]
   property.property_type = params[:property_type]
@@ -78,6 +78,7 @@ post '/properties' do
   property.bath_count = params[:bath_count]
   property.car_space_count = params[:car_space_count]
   property.notes_general = params[:notes_general]
+  property.user_id = current_user.id
 
   property.save
   redirect '/properties'
@@ -136,7 +137,7 @@ post '/signup' do
   user = User.new
   user.first_name = params[:first_name]
   user.last_name = params[:last_name]
-  user.email = params[:email]
+  user.email = params[:email].downcase
   user.password = params[:password]
   user.save
   session[:user_id] = user.id
