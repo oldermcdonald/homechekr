@@ -25,7 +25,7 @@ a:visited {
 nav {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   font-size: 1.5em;
   background-color: salmon;
   color: white;
@@ -37,10 +37,12 @@ nav h1 {
 }
 
 .nav-btn {
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 
 
+
+/* --- Other General Styles --- */
 .btn-simple {
   background: white;
   border-radius: 3px;
@@ -53,6 +55,21 @@ nav h1 {
 .btn-simple:hover {
   background: rgb(243, 255, 207);
 }
+
+
+.text-center-container {
+  position: relative;
+  height: 30em;
+}
+
+.text-center-container p {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.5em;
+  color: white;
+}
+
+
 
 
 
@@ -235,7 +252,16 @@ input:focus {
   .main-img {
     width: 100vw;
   }
+  .property-container {
+    width: 95vw;
+  }
+  .login-container {
+    max-width: 95vw;
+    margin-top: 2em;
+  }
 }
+
+
 
 
 
