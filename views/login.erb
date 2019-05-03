@@ -1,17 +1,19 @@
 <div class="login-container">
 
   <div class="login-options">
-    <button>Login</button>
-    <button>Sign up</button>
+    <a href="/login">Sign in</a>
+    <a href="/signup">Sign up</a>
   </div>
 
   <div class="login-details">
     <form action="/session" method="post">
-      <label for="email">email</label>
-      <input id="email" type="text" name="email">
-      <label for="password">password</label>
-      <input is="password" type="password" name="password">
-      <button>login</button>
+      <div class="login-fields">
+        <input type="text" name="email" placeholder="Email">
+
+        <input type="password" name="password"  placeholder="Password">
+  
+        <button>Sign in</button>
+      </div>
     </form>
   </div>
 

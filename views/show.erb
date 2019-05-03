@@ -1,6 +1,7 @@
 <h1><%= @property.address %></h1>
 <img src="<%= @property.main_img%>" alt="">
 <p><%= @property.notes_general %>
+
 <p><a href="/properties/<%= @property.id %>/edit">Edit Property</a></p>
 
 <form action="/properties/<%= @property.id %>" method="post">

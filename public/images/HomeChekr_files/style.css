@@ -83,7 +83,7 @@ nav h1 {
 
 /* LOGIN MENU */
 .login-container {
-  height: 30em;
+  min-height: 40vh;
   max-width: 30em;
   margin: 7em auto 0 auto;
   background-color: #e3e3e3
@@ -98,9 +98,6 @@ nav h1 {
   color: white;
 }
 
-.login-options a:hover {
-  background-color: #50754b;
-}
 
 .login-options a {
   border: 2px solid #e3e3e3;
@@ -109,25 +106,19 @@ nav h1 {
   padding: 0.8em 0;
 }
 
+.login-options a:hover {
+  background-color: #50754b;
+}
 .login-options a:last-child {
   border-left: none;
 }
 
-
-
 .login-details {
   padding: 1.5em;
   margin: 0 auto;
-}
+  height: 100%;
+  display: flex;
 
-.login-fields {
-  padding-top: 3em;
-}
-
-.login-details label{
-  color: #7b7b7b;
-  display: block;
-  margin-bottom: 0.3em;
 }
 
 .login-details form {
@@ -135,12 +126,13 @@ nav h1 {
 }
 
 .login-details input {
+  display: block;
   width: 96%;
   height: 2em;
   font-size: 1em;
   border: none;
   padding-left: 0.8em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 input:focus {
@@ -153,8 +145,5 @@ input:focus {
   height: 2em;
   font-size: 1em;
   background-color: #c7c7c7;
-  color: #7b7b7b;
-  margin-top: 1em;
+  color: #7b7b7b
 }
-
-

@@ -126,3 +126,20 @@ post '/comments' do
   comment.save
   redirect "/properties/#{comment.property_id}"
 end
+
+
+get '/signup' do
+  erb :signup
+end
+
+
+post '/signup' do
+  user = User.new
+  user.first_name = params[:first_name]
+  user.last_name = params[:last_name]
+  user.email = params[:email]
+  user.password = params[:password]
+  user.save
+  session[:user_id] = user.id
+  redirect '/'
+end
