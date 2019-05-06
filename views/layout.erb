@@ -12,12 +12,13 @@
   
   <nav>
     <div class="nav-btn">
-      <span>Search</span>
+    <form action="/properties/search">
+      <input type="text" name="search" placeholder="search">
+    </form>
     </div>
 
     <a href="/properties"><h1>HomeCheckr</h1></a>
 
-    <%# If logged in %>
     <% if logged_in? %>
       <div class="nav-btn">
         <form action="/session" method="post">
@@ -35,16 +36,10 @@
 
 
   <% if logged_in? %>
-    <form action="/session" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button class="btn-simple">logout</button>
-    </form>
     logged in as: <%= current_user.email %>
-      <br>
+    <br>
     <a href="/properties" class="btn-simple">View all saved properties</a>
     <a href="/properties/new" class="btn-simple">Add a property</a>
-    <% else %>
-    <a href="/login" class="btn-simple">login</a>
   <% end %>
 
   <%= yield %>

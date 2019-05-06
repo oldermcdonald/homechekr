@@ -2,7 +2,7 @@
 # Homechekr App
 
 require 'sinatra'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 require 'pry'
 require_relative 'db_config'
 
@@ -55,9 +55,8 @@ delete '/session' do
 end
 
 
-
 get '/properties' do
-  @properties = Property.where(user_id: current_user)
+  @properties = Property.where(user_id: current_user.id)
   erb :properties
 end
 
@@ -85,6 +84,11 @@ post '/properties' do
 end
 
 
+get '/properties/search' do
+  @properties = Property.where(user_id: current_user.id).where("address ilike '%#{params[:search]}%'")
+  erb :properties
+end
+
 
 get '/properties/:id' do
   @property = Property.find(params[:id])
@@ -104,7 +108,6 @@ get '/properties/:id/edit' do
   @property = Property.find(params[:id])
   erb :edit
 end
-
 
 
 put '/properties/:id' do
