@@ -2,7 +2,7 @@
 # Homechekr App
 
 require 'sinatra'
-require 'sinatra/reloader'
+# require 'sinatra/reloader'
 require 'pry'
 require_relative 'db_config'
 
