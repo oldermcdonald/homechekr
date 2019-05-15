@@ -1,0 +1,14 @@
+<br>
+
+User searched: <%= @search_address %>
+<br>
+
+Did you mean:
+<br>
+
+<% @results.each do |property| %>
+  <a href="/properties/new?address=<%= property["address"] %>&domain_id=<%= property["id"] %>">
+    <%= property["address"] %>
+  </a>
+  <br>
+<% end %>

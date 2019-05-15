@@ -46,3 +46,5 @@ CREATE TABLE comments(
 
 -- ALTER TABLE properties
 -- ADD COLUMN address text;
+
+SELECT * FROM properties WHERE address ILIKE '%nio%';

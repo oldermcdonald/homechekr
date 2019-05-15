@@ -2,13 +2,15 @@
 # Homechekr App
 
 require 'sinatra'
-# require 'sinatra/reloader'
+require 'sinatra/reloader'
 require 'pry'
-require_relative 'db_config'
 
+require_relative 'db_config'
+require_relative 'domain_api'
 require_relative 'models/property'
 require_relative 'models/comment'
 require_relative 'models/user'
+
 
 enable :sessions
 
@@ -63,13 +65,16 @@ end
 
 get '/properties/new' do
   redirect '/login' unless logged_in?
+  # get params from find
+  @domain_id = params[:domain_id]
+  @address = params[:address]
+
   erb :new
 end
 
 
 post '/properties' do
   property = Property.new
-  
   property.address = params[:address]
   property.main_img = params[:main_img]
   property.property_type = params[:property_type]
@@ -88,6 +93,27 @@ get '/properties/search' do
   @properties = Property.where(user_id: current_user.id).where("address ilike '%#{params[:search]}%'")
   erb :properties
 end
+
+
+get '/properties/find' do
+  erb :find
+end
+
+
+
+# search domain for property
+get '/properties/find/results' do
+  @search_address = params[:search_address]
+  puts @search_address
+
+  @api_data = DomainAPI.get_access_token()
+  @results = DomainAPI.get_resi_properties_by_terms(params[:search_address],@api_data["access_token"])
+
+  erb :findresults
+end
+
+
+
 
 
 get '/properties/:id' do
@@ -120,7 +146,7 @@ put '/properties/:id' do
   redirect "/properties/#{property.id}"
 end
 
-# @properties = Property.find where user_id = current_user
+
 
 post '/comments' do
   comment = Comment.new
@@ -146,3 +172,8 @@ post '/signup' do
   session[:user_id] = user.id
   redirect '/'
 end
+
+
+
+
+
