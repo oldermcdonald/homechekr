@@ -3,7 +3,7 @@
 <br>
 Lets house-hunters rate their favourite properties and perform due diligence.
 
-## 🏡 [View Here](https://homechekr.herokuapp.com/) 🏡
+## 🏡 [Visit HomeChekr App](https://homechekr.herokuapp.com/) 🏡
 
 <!--
 <a href="">
